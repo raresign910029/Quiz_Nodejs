@@ -1,0 +1,280 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API",
+    "description": "對使用者帳號進行新增/管理"
+  },
+  "schemes": [
+    "http"
+  ],
+  "host": "localhost:3000",
+  "basePath": "/",
+  "paths": {
+    "/accounts": {
+      "get": {
+        "description": "取得所有使用者，使用query方法",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "使用者名稱",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "使用者密碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "使用者權限",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "admin",
+              "user",
+              "guest"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Query Success"
+          },
+          "404": {
+            "description": "Query Fail"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "新增使用者",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "使用者名稱",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "使用者密碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "使用者權限",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "admin",
+              "user",
+              "guest"
+            ]
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Add Success"
+          },
+          "400": {
+            "description": "Add Fail"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/accounts/id": {
+      "get": {
+        "description": "取得單一使用者，使用query方法",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "使用者名稱",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "使用者密碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "使用者權限",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "admin",
+              "user",
+              "guest"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Query Success"
+          },
+          "404": {
+            "description": "Query Fail"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "對單一使用者，覆蓋原有欄位，使用query方法",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "使用者名稱",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "使用者密碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "使用者權限",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "admin",
+              "user",
+              "guest"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "該筆資源的完整資料(整筆) Success"
+          },
+          "400": {
+            "description": "Query Fail"
+          },
+          "410": {
+            "description": "Query Fail"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "description": "更新指定的一筆資源 (部份更新)，使用query方法",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "使用者名稱",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "使用者密碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "使用者權限",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "admin",
+              "user",
+              "guest"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "該筆更動的資料(部分) Success"
+          },
+          "400": {
+            "description": "Query Fail"
+          },
+          "410": {
+            "description": "Query Fail"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "刪除指定的一筆資源，使用query方法",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "使用者名稱",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "使用者密碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "使用者權限",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "admin",
+              "user",
+              "guest"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete Success -> No Content"
+          },
+          "400": {
+            "description": "Query Fail"
+          },
+          "410": {
+            "description": "Query Fail"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
